@@ -14,9 +14,10 @@ public class SecondActivity extends AppCompatActivity {
         setContentView(R.layout.activity_second);
 
         Intent i = getIntent();
-        String name = i.getStringExtra("name");
-        String surName = i.getStringExtra("surname");
-        String email = i.getStringExtra("email");
+        Bundle b = i.getBundleExtra("personbdl");
+        String name = b.getString("name");
+        String surName = b.getString("surname");
+        String email = b.getString("email");
 
         TextView tvName = (TextView) findViewById(R.id.textViewName);
         TextView tvSurName = (TextView) findViewById(R.id.textViewSurName);

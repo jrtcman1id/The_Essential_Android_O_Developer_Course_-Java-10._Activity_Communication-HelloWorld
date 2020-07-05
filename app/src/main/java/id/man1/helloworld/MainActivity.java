@@ -22,10 +22,11 @@ public class MainActivity extends AppCompatActivity {
         EditText email = (EditText) findViewById(R.id.editTextEmail);
 
         Intent myIntent = new Intent(this, SecondActivity.class);
-        myIntent.putExtra("name", name.getText().toString());
-        myIntent.putExtra("surname", surName.getText().toString());
-        myIntent.putExtra("email", email.getText().toString());
-
+        Bundle b = new Bundle();
+        b.putString("name", name.getText().toString());
+        b.putString("surname", surName.getText().toString());
+        b.putString("email", email.getText().toString());
+        myIntent.putExtra("personbdl", b);
         startActivity(myIntent);
     }
 }
